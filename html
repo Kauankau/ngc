@@ -1,0 +1,48 @@
+<html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Você decide o futuro da IA</title>
+</head>
+<body>
+    <div class="caixa-principal">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnVcdcEevn_d_O9W-QBd9qk2J95CZfB73RdE6QY5g2vg3hSVftqsZIvnlIy8H7ePn2dBo&usqp=CAU" alt="Imagem de IA" class="imagem-ia">
+        <h1>Você decide o futuro da IA</h1>
+        <div class="caixa-perguntas">
+            <p>Qual sua opinião sobre a inteligência artificial?</p>
+        </div>
+        <div class="caixa-alternativas">
+            <label><input type="radio" name="opiniao" value="positiva"> Positiva</label>
+            <label><input type="radio" name="opiniao" value="negativa"> Negativa</label>
+            <label><input type="radio" name="opiniao" value="neutra"> Neutra</label>
+        </div>
+        <div class="caixa-resultado">
+            <button onclick="mostrarResultado()">Mostrar Resultado</button>
+            <p class="texto-resultado" id="resultado"></p>
+        </div>
+    </div>
+
+    <script>
+        function mostrarResultado() {
+            var opcoes = document.getElementsByName('opiniao');
+            var resultado = document.getElementById('resultado');
+
+            var escolha;
+            for (var i = 0; i < opcoes.length; i++) {
+                if (opcoes[i].checked) {
+                    escolha = opcoes[i].value;
+                    break;
+                }
+            }
+
+            if (escolha) {
+                resultado.textContent = 'Sua opinião sobre a inteligência artificial é ' + escolha + '.';
+            } else {
+                resultado.textContent = 'Por favor, selecione uma opção.';
+            }
+        }
+    </script>
+</body>
+</html>
